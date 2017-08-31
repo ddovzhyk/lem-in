@@ -38,7 +38,7 @@ int		read_num_ants(int *num_ants)
 			&& line[0] == '#' &&
 			!ft_strequ(line, "##start") && !ft_strequ(line, "##end"))
 		ft_strdel(&line);
-	if (line == NULL || *line == '\0' ||
+	if (line == NULL ||
 			ft_strequ(line, "##start") || ft_strequ(line, "##end"))
 	{
 		ft_strdel(&line);

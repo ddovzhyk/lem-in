@@ -89,12 +89,12 @@ t_room	*do_command(t_room *first, char *line, t_room **start, t_room **end)
 			!ft_strequ(next_line, "##start") && !ft_strequ(next_line, "##end"))
 		ft_strdel(&next_line);
 	if (next_line == NULL ||
-			ft_strequ(next_line, "##start") || ft_strequ(next_line, "##end"))
+			ft_strequ(next_line, "##start") || ft_strequ(next_line, "##end") ||
+			!(tmp = check_and_create_room(first, next_line)))
 	{
 		ft_strdel(&next_line);
 		return (NULL);
 	}
-	tmp = check_and_create_room(first, next_line);
 	if (ft_strequ(line, "##start"))
 		*start = tmp;
 	else

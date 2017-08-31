@@ -17,6 +17,8 @@ int		check_num_atoi(char **line, int *num)
 	int		count;
 	int		minus;
 
+	if (**line == '\0')
+		return (0);
 	*num = 0;
 	minus = (**line == '-') ? -1 : 1;
 	*line += (**line == '-') ? 1 : 0;
