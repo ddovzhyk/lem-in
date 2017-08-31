@@ -30,7 +30,7 @@ int		check_num_atoi(char **line, int *num)
 	if (count > 10)
 		return (0);
 	if (count == 10 && ft_strncmp(*line, "2147483647", 10) > 0 &&
-		(!minus || ft_strncmp(*line, "2147483648", 10) != 0))
+		(minus == 1 || ft_strncmp(*line, "2147483648", 10) != 0))
 		return (0);
 	while (count > 0)
 	{
